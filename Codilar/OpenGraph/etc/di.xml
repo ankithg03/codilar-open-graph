@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Codilar\OpenGraph\Model\PropertyInterface" type="Codilar\OpenGraph\Model\Property" />
+    <preference for="Codilar\OpenGraph\Model\AdapterInterface" type="Codilar\OpenGraph\Model\Adapter" />
+    <type name="Codilar\OpenGraph\Model\Adapter">
+        <arguments>
+            <argument name="adapters" xsi:type="array">
+                <item name="product_entity_container" xsi:type="object">\Codilar\OpenGraph\Model\Adapter\Product</item>
+                <item name="category_entity_container" xsi:type="object">\Codilar\OpenGraph\Model\Adapter\Category</item>
+                <item name="page_entity_container" xsi:type="object">\Codilar\OpenGraph\Model\Adapter\Page</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

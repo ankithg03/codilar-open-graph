@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="seo_tab" translate="label" sortOrder="401" class="seo-open-graph">
+            <label>Seo Open Graph Configurations</label>
+        </tab>
+        <section id="seo_open_graph_section" translate="label" type="text" sortOrder="8887" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Seo Open Graph</label>
+            <tab>seo_tab</tab>
+            <resource>Codilar_OpenGraph::configuration</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Seo Open Graph</label>
+                <field id="core_module_enable" translate="label comment" type="select" sortOrder="11" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable Extension</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>(Select Option "Yes" to Enable the extension and "No" to Disable the extension)</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
