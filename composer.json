@@ -17,6 +17,7 @@
       "role": "Magento Backend Developer"
     }
   ],
+  "minimum-stability": "alpha",
   "autoload": {
     "files": [
       "registration.php"
