@@ -8,13 +8,13 @@ Magento 2 Module to Improve Search Engine Optimization via OpenGraph on your Mag
 Install the module via composer like so:
 
 ```sh
-composer require Codilar/magento2-module-OpenGraph
+composer require ankith/open-graph-extension
 ```
 
-For Magento 2.1.x use release [1.6.1](https://github.com/Codilar/magento2-module-OpenGraph/releases/tag/1.6.1)
+For Magento 2.1.x use release [1.6.1](https://github.com/ankithg03/codilar-open-graph/releases/tag/1.6.1)
 
 ```sh
-composer require Codilar/magento2-module-OpenGraph:1.6.1
+composer require ankith/open-graph-extension
 ```
 
 
@@ -58,8 +58,8 @@ By Adding:
 
 Support
 -------
-If you have any issues with this extension, open an issue on [GitHub](https://github.com/Codilar/magento2-module-OpenGraph/issues).
+If you have any issues with this extension, open an issue on [GitHub](https://github.com/ankithg03/codilar-open-graph/issues).
 
 Developer
 ---------
-Ankith G, and all other [contributors](https://github.com/Codilar/magento2-module-OpenGraph/contributors)
+Ankith G, and all other [contributors](https://github.com/ankithg03/codilar-open-graph/contributors)
