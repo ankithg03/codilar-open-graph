@@ -10,6 +10,10 @@ use Codilar\OpenGraph\Model\BlockParser;
 use Codilar\OpenGraph\Model\Property;
 use Codilar\OpenGraph\Model\PropertyInterface;
 
+/**
+ * Class Category
+ * @package Codilar\OpenGraph\Model\Adapter
+ */
 class Category implements AdapterInterface
 {
     /**
@@ -42,6 +46,10 @@ class Category implements AdapterInterface
         $this->blockParser = $blockParser;
     }
 
+    /**
+     * @return PropertyInterface
+     * @throws \Magento\Framework\Exception\LocalizedException
+     */
     public function getProperty() : PropertyInterface
     {
         /**
@@ -57,7 +65,6 @@ class Category implements AdapterInterface
                     $this->property->setDescription($category->getData($messageAttribute));
                 }
             }
-
             if ($category->hasLandingPage() && !$this->property->getProperty('description')) {
                 $this->property->setDescription(
                     $this->blockParser->getBlockContentById(
@@ -65,7 +72,6 @@ class Category implements AdapterInterface
                     )
                 );
             }
-
             if ($category->getImageUrl()) {
                 $this->property->setImage((string) $category->getImageUrl());
             }

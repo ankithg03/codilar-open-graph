@@ -1,23 +1,20 @@
 <?php
-declare(strict_types=1);
 
 
 namespace Codilar\OpenGraph\Model\Adapter;
 
-use Exception;
+use Codilar\OpenGraph\Model\PropertyInterface;
 use Magento\Cms\Model\Page as CmsPage;
 use Magento\Cms\Model\Template\FilterProvider;
 use Magento\Framework\UrlInterface;
-use Codilar\OpenGraph\Model\AdapterInterface;
-use Codilar\OpenGraph\Model\Property;
-use Codilar\OpenGraph\Model\PropertyInterface;
+use Magento\Framework\View\Page\Title;
 use Magento\Theme\Block\Html\Header\Logo;
 
 /**
- * Class Page
+ * Class CustomPage
  * @package Codilar\OpenGraph\Model\Adapter
  */
-class Page implements AdapterInterface
+class CustomPage
 {
     /**
      * @var PropertyInterface
@@ -40,26 +37,41 @@ class Page implements AdapterInterface
      */
     private $logo;
 
+
+    /**
+     * @var Title
+     */
+    private $title;
+
+
     /**
      * Page constructor.
-     * @param CmsPage $page
+     * @param Title $title
      * @param UrlInterface $url
      * @param FilterProvider $filterProvider
      * @param PropertyInterface $property
      * @param Logo $logo
      */
     public function __construct(
-        CmsPage $page,
+        Title $title,
         UrlInterface $url,
         FilterProvider $filterProvider,
         PropertyInterface $property,
         Logo $logo
     ) {
         $this->property = $property;
-        $this->page = $page;
         $this->url = $url;
         $this->filterProvider = $filterProvider;
         $this->logo = $logo;
+        $this->title = $title;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitle(): string
+    {
+        return $this->title->getShortHeading();
     }
 
     /**
@@ -67,18 +79,9 @@ class Page implements AdapterInterface
      */
     public function getProperty() : PropertyInterface
     {
-        if ($this->page->getId()) {
-            $this->property->setTitle((string) $this->page->getTitle());
-            try {
-                $this->property->setDescription(
-                    (string)$this->filterProvider->getBlockFilter()->filter($this->page->getContent())
-                );
-            } catch (Exception $e) {
-            }
-            $this->property->setImage((string)$this->logo->getLogoSrc());
-            $this->property->setUrl((string) $this->url->getUrl($this->page->getIdentifier()));
-            $this->property->addProperty('item', $this->page->getData(), Property::META_DATA_GROUP);
-        }
+        $this->property->setTitle((string) $this->getTitle());
+        $this->property->setImage((string)$this->logo->getLogoSrc());
+        $this->property->setUrl((string) $this->url->getCurrentUrl());
         return $this->property;
     }
 }

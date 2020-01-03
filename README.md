@@ -53,7 +53,7 @@ By Adding:
         ```
 ## Requirements
 
-- PHP: > 7.0
+- PHP: > 7.2
 - Magento 2.2.x | 2.3.x
 
 Support

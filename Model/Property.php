@@ -3,7 +3,10 @@ declare(strict_types=1);
 
 
 namespace Codilar\OpenGraph\Model;
-
+/**
+ * Class Property
+ * @package Codilar\OpenGraph\Model
+ */
 final class Property implements PropertyInterface
 {
     const META_DATA_GROUP = '_data';
@@ -59,7 +62,7 @@ final class Property implements PropertyInterface
 
     /**
      * @param string $title
-     * @return $this
+     * @return string
      */
     public function setTitle(string $title)
     {
@@ -68,7 +71,7 @@ final class Property implements PropertyInterface
 
     /**
      * @param string $description
-     * @return $this
+     * @return string
      */
     public function setDescription(string $description)
     {
@@ -84,7 +87,7 @@ final class Property implements PropertyInterface
 
     /**
      * @param string $url
-     * @return $this
+     * @return string
      */
     public function setUrl(string $url)
     {
@@ -101,7 +104,7 @@ final class Property implements PropertyInterface
 
     /**
      * @param string $image
-     * @return $this
+     * @return string
      */
     public function setImage(string $image)
     {
@@ -123,7 +126,7 @@ final class Property implements PropertyInterface
 
     /**
      * @param string $imageAlt
-     * @return $this
+     * @return string
      */
     public function setImageAlt(string $imageAlt)
     {

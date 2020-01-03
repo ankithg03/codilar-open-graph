@@ -2,9 +2,13 @@
 /**
  * @var \Codilar\OpenGraph\Block\OpenGraph $block
  */
+
 declare(strict_types=1);
 if($block->isOpenGraphModuleEnabled()){
     echo $block->getMetaData();
-}
+    if(!$block->getMetaData()){
+        echo $block->getMetaDataForCustomPages();
+    }
 
+}
 
