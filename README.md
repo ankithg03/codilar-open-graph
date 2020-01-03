@@ -31,6 +31,15 @@ By Adding:
         <meta property="og:title" content="Home page" />
         <meta property="og:description" content="CMS homepage content goes here." />
         <meta property="og:url" content="http://example.com/" />
+        <meta property="og:image" content="http://example.com/pub/static/logo.svg" />
+        ```
+        
+    - For Custom Routes/Pages
+        ```html
+        <meta property="og:title" content="Contact" />
+        <meta property="og:description" content="Contact Us for any issue you are facing" />
+        <meta property="og:url" content="http://example.com/contact/" />
+        <meta property="og:image" content="http://example.com/pub/static/logo.svg" />
         ```
         
     - For Categories
