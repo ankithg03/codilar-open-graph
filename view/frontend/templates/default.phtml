@@ -1,0 +1,17 @@
+<?php
+/**
+ * @var OpenGraph $block
+ */
+
+use Codilar\OpenGraph\Block\OpenGraph;
+
+if ($block->isOpenGraphModuleEnabled()): ?>
+    <?= $block->getMetaData()?>
+    <?php if (!$block->getMetaData()):?>
+        <?= $block->getMetaDataForCustomPages();?>
+    <?php endif?>
+<?php $facebookAppId = $block->getFacebookAppID();?>
+<?php if (isset($facebookAppId)): ?>
+    <meta property="fb:app_id" content="<?= $block->escapeHtml($block->getFacebookAppID())?>">
+<?php endif;?>
+<?php endif?>
