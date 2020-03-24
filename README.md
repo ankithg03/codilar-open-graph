@@ -2,7 +2,10 @@
 
 Magento 2 Module to Improve Search Engine Optimization via OpenGraph on your Magento site.
 
-
+## Documentation
+```sh
+https://docs.google.com/document/d/1cKSsQaRbYkRvoehY1kWexUJB6IrmgWX2Q1qQk3h_e3I/edit?usp=sharing
+```
 ## Installation
 
 Install the module via composer like so:
