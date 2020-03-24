@@ -68,6 +68,10 @@ By Adding:
 - PHP: > 7.2
 - Magento 2.2.x | 2.3.x
 
+## Test Cases
+
+https://docs.google.com/spreadsheets/d/195jY4uHxhx19A4gZFmmm4-31g-1SZh3uThgrnCfXnxw/edit?usp=sharing
+
 Support
 -------
 If you have any issues with this extension, open an issue on [GitHub](https://github.com/ankithg03/codilar-open-graph/issues).
